@@ -1,10 +1,21 @@
 import React from "react";
 import { nanoid } from "nanoid";
+import Popup from "./popUp";
+
 
 export default function Welcome(){
 
 
     //Start FUNCTIONS
+
+// Popup close
+const [popupstate, cngpopUpbtn] = React.useState(false)
+
+    function closepopUp(){
+        cngpopUpbtn(oldVal=> !oldVal)
+    }
+
+
 
 
 //answer check
@@ -40,6 +51,7 @@ function refreshAnswers(){
     cngRefresh(oldVal=> !oldVal)
     submitCliked(oldVal=> !oldVal)
     cngCountcorr(0)
+    cngpopUpbtn(oldArr=>!oldArr)
 
 }
 
@@ -179,7 +191,15 @@ const qestionList = triviaArr.map((assignVal, mainIndex) =>
     return(
 
 <div className="grid-quizbackground">
-<h1 className="score-count"><span className="score-text" >SCORE</span> <br></br>10 / {countCorrAns}</h1>
+{submitArr && !popupstate && <div className="score-count" ><Popup popUpclose={closepopUp} scoreCountprop={countCorrAns} /> </div>}
+
+
+{submitArr &&<div className="scoreshow-ontop">
+            <h1><span className="score-text" >SCORE</span> <br></br>10 / {countCorrAns}</h1>
+
+        </div>}
+
+
 {/* eslint-disable-next-line */}
             <img className="hometopimg" src="/images/yellowblob.png"></img>
 

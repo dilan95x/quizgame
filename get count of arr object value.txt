@@ -1,0 +1,18 @@
+oldArr.forEach((e) => {
+  const x = e.answers.filter((it) => !it.isHeld);
+
+  count += x.length;
+});
+
+
+
+
+
+
+const count = oldArr
+  .map((e) => {
+    const x = e.answers.filter((it) => !it.isHeld);
+
+    return Number(x.length);
+  })
+  .reduce((x, y) => x + y, 0);
