@@ -125,6 +125,13 @@ box-sizing: border-box;
 border-radius: 7.71045px;
 }
 
+/* Try Again animation */
+
+.tryagin-style{
+width: 100%;
+max-width: 90px;
+}
+
 /* Answer Buttun hover */
 
 .quizpage-answers:hover{

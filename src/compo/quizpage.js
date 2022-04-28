@@ -149,7 +149,7 @@ const [triviaArr, triviaCng] = React.useState([])
         
 
 },[reFresh])
-console.log(triviaArr)
+
 
 
 
