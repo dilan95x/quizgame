@@ -6,7 +6,6 @@ import Quiz from "./compo/quizpage"
 
 const[welcomePage, startQuiz]=React.useState(true)
 
-console.log(welcomePage)
   
   return (
     <>

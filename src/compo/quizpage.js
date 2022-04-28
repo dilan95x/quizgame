@@ -59,15 +59,7 @@ function refreshAnswers(){
 
 function submitAnswers(){
 
-
-    
-    // const isHeldfalseExist = triviaArr.answers.find(mapItms=>mapItms.isAnstrue===false);
-    // console.log(isHeldfalseExist)
-
       
- 
- 
-    
     
     triviaCng(oldArrwithisheld=> oldArrwithisheld.map(mapItms=>{
         
@@ -101,7 +93,7 @@ function submitAnswers(){
     
 
   cngCountcorr(count)
-  console.log(countCorrAns)
+
 
 }
 //END FUNCTIONS
