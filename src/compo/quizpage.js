@@ -5,7 +5,13 @@ import Popup from "./popUp";
 
 export default function Welcome(){
 
-
+// Function to decode HTML entities
+const decodeHTML = (html) => {
+    const txt = document.createElement('textarea');
+    txt.innerHTML = html;
+    return txt.value;
+};
+    
     //Start FUNCTIONS
 
 // Popup close
@@ -149,7 +155,7 @@ const qestionList = triviaArr.map((assignVal, mainIndex) =>
 
 <div key={assignVal.id} className="question-asnwer-grid"> 
 
-           <h1 className="quizpage-qestions">{assignVal.questions}</h1> 
+           <h1 className="quizpage-qestions">{decodeHTML(assignVal.questions)}</h1> 
 <div className="felx-answers">
 
 
@@ -171,9 +177,9 @@ const qestionList = triviaArr.map((assignVal, mainIndex) =>
       key={inside.id}
       onClick={(event)=>answerClicked(event, btnIndex, mainIndex, inside.id)}
  className="quizpage-answers" 
- value={inside.answrs}> 
+ value={decodeHTML(inside.answrs)}> 
  
- {inside.answrs} 
+ {decodeHTML(inside.answrs)} 
  </button>)}
 
         </div>
